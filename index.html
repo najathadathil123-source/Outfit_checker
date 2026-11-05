@@ -9,49 +9,77 @@
 </head>
 <body>
 
-    <header>
-        <h2>Closetly 🎀</h2>
-        <nav>
-            <a href="#">Home</a>
-            <a href="#wardrobe">My Wardrobe</a>
-            <a href="#outfits">Outfits</a>
-            <a href="#calendar">Calendar</a>
-        </nav>
-    </header>
+<header>
+    <h2>Closetly 🎀</h2>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#wardrobe">Wardrobe</a>
+        <a href="#outfits">Create Outfit</a>
+        <a href="#calendar">Calendar</a>
+    </nav>
+</header>
 
-    <section class="hero">
-        <h1>Your Style, Your Story ✨</h1>
-        <p>Organize your wardrobe and create beautiful outfits.</p>
-        <button onclick="showMessage()">Explore My Closet</button>
-    </section>
+<section class="hero" id="home">
+    <h1>Your Style, Your Story ✨</h1>
+    <p>Organize your wardrobe and create beautiful outfits.</p>
+    <button onclick="goToWardrobe()">Explore My Closet</button>
+</section>
 
-    <section id="wardrobe">
-        <h2>My Wardrobe</h2>
-        <div class="categories">
-            <div class="category">👚<p>Tops</p></div>
-            <div class="category">👖<p>Bottoms</p></div>
-            <div class="category">👗<p>Dresses</p></div>
-            <div class="category">👟<p>Shoes</p></div>
-            <div class="category">👜<p>Bags</p></div>
-            <div class="category">💍<p>Accessories</p></div>
-        </div>
-    </section>
+<section id="wardrobe">
+    <h2>My Wardrobe 👗</h2>
+    <p>Upload your favourite clothes</p>
 
-    <section id="outfits">
-        <h2>Create Your Outfit</h2>
-        <p>Mix and match your favourite clothes!</p>
-        <button onclick="showMessage()">Create Outfit</button>
-    </section>
+    <input type="file" id="clothesImage" accept="image/*">
+    <select id="category">
+        <option value="Tops">Tops</option>
+        <option value="Bottoms">Bottoms</option>
+        <option value="Dresses">Dresses</option>
+        <option value="Shoes">Shoes</option>
+        <option value="Bags">Bags</option>
+        <option value="Accessories">Accessories</option>
+    </select>
 
-    <section id="calendar">
-        <h2>Plan Your Looks 📅</h2>
-        <p>Plan your outfits for every special day.</p>
-    </section>
+    <button onclick="addClothes()">Add Clothes</button>
+    <div id="wardrobeItems" class="categories"></div>
+</section>
 
-    <footer>
-        <p>© 2026 Closetly | Made with love 💗</p>
-    </footer>
+<section id="outfits">
+    <h2>Create Your Outfit 💗</h2>
 
-    <script src="script.js"></script>
+    <select id="topSelect">
+        <option value="">Choose Top</option>
+    </select>
+
+    <select id="bottomSelect">
+        <option value="">Choose Bottom</option>
+    </select>
+
+    <select id="shoeSelect">
+        <option value="">Choose Shoes</option>
+    </select>
+
+    <button onclick="createOutfit()">Create Outfit</button>
+    <button onclick="saveOutfit()">Save Favourite</button>
+
+    <div id="outfitResult"></div>
+</section>
+
+<section id="favourites">
+    <h2>My Favourite Outfits ❤️</h2>
+    <div id="favouriteItems"></div>
+</section>
+
+<section id="calendar">
+    <h2>Plan Your Looks 📅</h2>
+    <input type="date" id="outfitDate">
+    <button onclick="planOutfit()">Plan My Outfit</button>
+    <div id="plannedItems"></div>
+</section>
+
+<footer>
+    <p>© 2026 Closetly | Made with love 💗</p>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
